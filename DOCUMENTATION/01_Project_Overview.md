@@ -28,7 +28,7 @@ The CM Kerala Public Service Portal demonstration project provides a centralized
 - One feedback response per grievance after it is resolved.
 - CMO grievance list, filters, counts, district and department statistics, routing, optional officer assignment, internal notes, escalation, and action-report review.
 - Department Officer case queue, investigation progress notes, optional PDF uploads, action-taken reports, and department forwarding.
-- Optional Groq-based AI suggestions for department, category, priority, summary, and possible duplicate complaints.
+- End-to-end Groq LLM API integration for advisory department, category, priority, summary, and possible duplicate suggestions. It requires a valid server-side API key, supported model, and provider access.
 - Supabase-backed authentication, PostgreSQL data storage, row-level security, and private document storage.
 
 ### Not included
@@ -85,5 +85,8 @@ The CM Kerala Public Service Portal demonstration project provides a centralized
 - Grievance documents are stored in a private bucket and served through short-lived signed URLs.
 - Supabase row-level security controls access to grievance records, workflow events, and feedback.
 - Supabase service-role and Groq API keys are intended for server-side use only.
-- Public Department Officer registration is a demonstration feature and must not be enabled for a real deployment with sensitive data.
+- Public Department Officer registration is available in demo mode and must not be enabled for an official deployment. The intended official setup is invitation-only through the PM Office; this prototype's protected invitation flow is currently initiated by a CMO Admin and would need to be adapted to enforce that issuer policy.
 
+## Intended value
+
+For Citizens, the project provides a clear submission route, a unique reference ID, visibility into status and department assignment, public progress history, and a way to provide feedback after resolution. For government teams, it demonstrates centralized review, structured department handoffs, investigation and action reporting, overdue monitoring, and district/department statistics. The workflow can improve coordination and transparency, but does not guarantee a case outcome or response time.

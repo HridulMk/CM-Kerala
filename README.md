@@ -6,6 +6,19 @@ A role-based grievance portal built with Next.js, React, TypeScript, and Supabas
 
 See [REQUIREMENTS.md](./REQUIREMENTS.md) for the project's functional requirements.
 
+## Purpose and public value
+
+The project demonstrates how a shared digital grievance workflow can give Citizens a clearer way to raise public-service concerns and follow what happens next. Every successful submission gets a reference number, and the Citizen dashboard shows the case status, assigned department, and public progress history.
+
+For people, the portal offers one place to submit a complaint, keep its reference ID, see the responsible department, and provide feedback after resolution. For government teams, role-based workspaces support CMO review, department routing, investigation notes, action reports, overdue monitoring, and district/department statistics. A recorded workflow can help staff coordinate handoffs and make case progress easier to review; it does not guarantee a particular outcome or response time.
+
+The intended workflow is: **Citizen submits → reference ID generated → CMO reviews and routes → Department investigates and updates progress → Department submits an action report or forwards the case → CMO reviews the report and resolves or requests further action → Citizen views public updates and may leave feedback after resolution.**
+
+## Demonstration accounts and AI integration
+
+- **Department Officers:** Demo mode includes public demo-officer registration so the role-based workflow can be tried without waiting for an official invitation. Do not use this open registration with real or sensitive data. In the intended official setup, public registration should be disabled and officer accounts created only through an invitation from the PM Office. This prototype's protected invitation flow is currently administered by a CMO Admin, so its issuing authority must be adapted to the official deployment policy.
+- **AI assistance:** Groq LLM integration is implemented end-to-end for CMO grievance analysis: it sends a selected complaint and limited candidate excerpts, validates structured analysis, and saves suggested category and priority. It is functional when a valid server-side `GROQ_API_KEY`, supported `GROQ_MODEL`, Supabase setup, and provider access are configured. The API integration's live availability depends on those external settings. AI suggestions are advisory and require human review.
+
 ## Contents
 
 - [Features](#features)
@@ -214,6 +227,7 @@ If the app reports `PGRST205` for a missing profile or grievance table, check th
 
 - For normal use, a CMO Admin invites officers through the CMO dashboard. The invitation recipient verifies the invitation, chooses a department, and completes registration.
 - `/officer/register` also supports demo public registration. This is intentionally a privileged, server-side account creation flow and can grant access to an officer-role queue. Keep it disabled in production unless this is an isolated demo with non-sensitive data.
+- For the intended official deployment, disable public registration and allow officer account creation only through invitations from the PM Office. The invitation implementation in this prototype is initiated by a CMO Admin; it does not currently enforce a separate PM Office issuer identity.
 - Officer invitation and demo registration use `SUPABASE_SERVICE_ROLE_KEY`; this key must stay server-only.
 
 ## Grievance lifecycle and data access
@@ -236,4 +250,3 @@ If the app reports `PGRST205` for a missing profile or grievance table, check th
 | `npm run lint` | Run ESLint |
 | `npm run build` | Create the optimized production build and type-check the app |
 | `npm run start` | Serve the production build |
-

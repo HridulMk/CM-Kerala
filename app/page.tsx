@@ -249,6 +249,37 @@ export default function Home() {
           </div>
         </section>
 
+        <section aria-labelledby="portal-purpose-heading" className="bg-[#f5f8f6] px-5 py-16 sm:px-8 sm:py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
+              <p className="text-xs font-bold tracking-[0.16em] text-[#0f766e]">WHY THIS PORTAL</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="portal-purpose-heading">
+                A clearer path from public concern to departmental action.
+              </h2>
+            </div>
+            <div className="space-y-5 text-sm leading-7 text-slate-600 sm:text-base">
+              <p>
+                This project demonstrates a shared digital process for raising public-service grievances, routing them to the relevant department, and following progress through a reference number and case history.
+              </p>
+              <p>
+                For Citizens, it offers one place to submit a concern, see its status and assigned department, review public updates, and share feedback after resolution. For government teams, role-based workspaces support CMO review, department handoffs, investigation notes, action reports, overdue monitoring, and district-wise and department-wise statistics.
+              </p>
+              <p>
+                The recorded workflow can help people understand the next step and help teams coordinate case handling. It does not guarantee a particular outcome or response time.
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto mt-8 max-w-7xl rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:p-6">
+            <p className="text-sm font-semibold text-amber-950">Demonstration mode</p>
+            <p className="mt-2 text-sm leading-6 text-amber-900">
+              This demo permits public registration of Department Officer demo accounts so the workflow can be explored. In the intended official setup, public registration should be disabled and officer accounts created only by invitation from the PM Office. The protected invitation flow in this prototype is currently administered by a CMO Admin.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-amber-900">
+              CMO AI analysis is integrated with Groq&apos;s LLM API and works when the server has a valid API key, supported model, and provider access configured. Its suggestions are advisory and must be reviewed by an authorized person.
+            </p>
+          </div>
+        </section>
+
         <section className="scroll-mt-28 bg-white px-5 py-16 sm:px-8 sm:py-20" id="services">
           <div className="mx-auto max-w-7xl">
             <SectionHeading

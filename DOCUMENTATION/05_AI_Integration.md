@@ -1,6 +1,6 @@
 # AI Integration
 
-This document describes the optional Groq-powered grievance analysis available to CMO Admins. The integration is implemented in the Next.js server action `analyzeGrievance` in `app/actions/ai-analysis.ts`. It is an assistive feature; it does not decide, route, assign, escalate, or resolve cases.
+This document describes the Groq-powered grievance analysis available to CMO Admins. The integration is implemented end-to-end in the Next.js server action `analyzeGrievance` in `app/actions/ai-analysis.ts` and is functional when a valid server API key, supported model, Supabase setup, and provider access are configured. The external service's live availability depends on those settings. It is an assistive feature; it does not decide, route, assign, escalate, or resolve cases.
 
 ## Model and API
 
@@ -158,4 +158,3 @@ Restart the application after changing environment variables. Never commit a rea
 3. Check that the selected grievance is accessible to the CMO Admin and the required Supabase SQL scripts are installed.
 4. Review the action's explicit message for network, HTTP status, response-format, or database persistence failures.
 5. Verify the category and priority on the CMO dashboard after a successful analysis; the full analysis is not persisted as a separate record.
-
