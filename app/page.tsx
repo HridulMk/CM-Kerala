@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
@@ -14,6 +15,7 @@ import {
   ShieldCheck,
   UsersRound,
 } from "lucide-react";
+import { PortalLogo } from "@/components/portal-logo";
 
 const citizenServices = [
   {
@@ -78,19 +80,17 @@ export default function Home() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-4 sm:flex-nowrap sm:px-8">
+      <header className="sticky top-0 z-40 border-b border-white/40 bg-white/65 shadow-sm shadow-slate-900/5 backdrop-blur-xl backdrop-saturate-150">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-4 sm:px-8 xl:flex-nowrap">
           <Link aria-label="CM Kerala Public Service Portal home" className="flex min-w-0 items-center gap-3" href="/">
-            <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-[#0f766e] text-white shadow-sm shadow-teal-900/15">
-              <Landmark aria-hidden="true" size={25} strokeWidth={1.8} />
-            </span>
+            <PortalLogo className="h-12 w-[72px] shrink-0" />
             <span className="min-w-0">
               <span className="block text-[11px] font-bold tracking-[0.16em] text-[#0f766e]">GOVERNMENT OF KERALA</span>
               <span className="mt-0.5 block text-sm font-semibold leading-5 text-slate-900 sm:text-base">Chief Minister&apos;s Public Service Portal</span>
             </span>
           </Link>
 
-          <nav aria-label="Main navigation" className="order-3 flex w-full items-center gap-x-5 gap-y-2 overflow-x-auto border-t border-slate-100 pt-3 text-sm font-medium text-slate-600 sm:order-none sm:w-auto sm:flex-1 sm:justify-center sm:gap-4 sm:px-1 sm:border-0 sm:pt-0 sm:text-[13px]">
+          <nav aria-label="Main navigation" className="order-3 flex w-full items-center gap-x-5 gap-y-2 overflow-x-auto border-t border-slate-100 pt-3 text-sm font-medium text-slate-600 xl:order-none xl:w-auto xl:flex-1 xl:justify-center xl:gap-4 xl:px-1 xl:border-0 xl:pt-0 xl:text-[13px]">
             <a className="whitespace-nowrap transition hover:text-[#0f766e]" href="#services">Citizen services</a>
             <a className="whitespace-nowrap transition hover:text-[#0f766e]" href="#how-it-works">How it works</a>
             <a className="whitespace-nowrap transition hover:text-[#0f766e]" href="#for-officials">For officials</a>
@@ -115,54 +115,59 @@ export default function Home() {
       </header>
 
       <div id="main-content">
-        <section className="relative isolate overflow-hidden bg-[#eff7f4]">
-          <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute -right-36 -top-56 size-[36rem] rounded-full border border-teal-800/10" />
-            <div className="absolute -right-16 -top-36 size-[28rem] rounded-full border border-teal-800/10" />
-            <div className="absolute bottom-0 right-[18%] h-28 w-64 rounded-t-full bg-[#dbeee7]/65 blur-2xl" />
-            <div className="absolute -bottom-36 -left-20 size-96 rounded-full bg-[#dceee8]/70 blur-3xl" />
-          </div>
+        <section className="relative isolate flex min-h-[760px] items-center overflow-hidden bg-[#123b36] sm:min-h-[820px] lg:min-h-[calc(100svh-110px)]">
+          <Image
+            alt=""
+            aria-hidden="true"
+            className="object-cover object-center"
+            fill
+            priority
+            sizes="100vw"
+            src="/images/wallpaper.png"
+          />
+          <div aria-hidden="true" className="absolute inset-0 -z-0 bg-gradient-to-r from-[#092c28]/95 via-[#123b36]/78 to-[#123b36]/35" />
+          <div aria-hidden="true" className="absolute inset-0 -z-0 bg-gradient-to-t from-[#092c28]/55 via-transparent to-[#092c28]/15" />
 
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-24">
+          <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-28">
             <div className="max-w-2xl">
-              <p className="inline-flex items-center gap-2 rounded-full border border-teal-900/10 bg-white/75 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#17665e]">
-                <ShieldCheck aria-hidden="true" size={15} />
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white backdrop-blur-md">
+                <ShieldCheck aria-hidden="true" size={15} className="text-emerald-200" />
                 CITIZEN-FIRST · SECURE · ACCOUNTABLE
               </p>
-              <h1 className="mt-6 text-4xl font-semibold leading-[1.12] tracking-tight text-[#183b36] sm:text-5xl lg:text-[3.55rem]">
+              <h1 className="mt-6 text-4xl font-semibold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.85rem]">
                 Your voice can help make public services better.
               </h1>
-              <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              <p className="mt-5 max-w-xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
                 Submit a grievance to the Chief Minister&apos;s Public Service Portal and follow its journey from review to action by the concerned department.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#0f766e] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-900/15 transition hover:-translate-y-0.5 hover:bg-[#0b625c]"
+                  className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#0f766e] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#0b625c]"
                   href="/register"
                 >
                   Register to submit a grievance
                   <ArrowRight aria-hidden="true" className="transition-transform group-hover:translate-x-0.5" size={17} />
                 </Link>
                 <Link
-                  className="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-teal-700/40 hover:bg-white"
+                  className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/50 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/20"
                   href="/login"
                 >
                   Sign in to your account
                 </Link>
               </div>
-              <p className="mt-4 text-xs leading-5 text-slate-500">
+              <p className="mt-4 text-xs leading-5 text-white/75">
                 Already submitted? Sign in to view your reference number and case updates.
               </p>
             </div>
 
             <div className="relative mx-auto w-full max-w-[31rem]">
-              <div className="absolute -left-5 top-16 hidden size-16 rounded-2xl border border-white/80 bg-white/75 shadow-lg shadow-teal-950/5 sm:grid sm:place-items-center">
+              <div className="absolute -left-5 top-16 hidden size-16 rounded-2xl border border-white/40 bg-white/20 shadow-lg shadow-black/10 backdrop-blur-md sm:grid sm:place-items-center">
                 <MapPin aria-hidden="true" className="text-[#0f766e]" size={25} />
               </div>
-              <div className="absolute -right-3 bottom-14 hidden size-16 rounded-2xl border border-white/80 bg-white/75 shadow-lg shadow-teal-950/5 sm:grid sm:place-items-center">
+              <div className="absolute -right-3 bottom-14 hidden size-16 rounded-2xl border border-white/40 bg-white/20 shadow-lg shadow-black/10 backdrop-blur-md sm:grid sm:place-items-center">
                 <ClipboardCheck aria-hidden="true" className="text-[#0f766e]" size={25} />
               </div>
-              <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white p-5 shadow-[0_30px_90px_-40px_rgba(20,72,61,0.42)] sm:p-7">
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/95 p-5 shadow-[0_30px_90px_-40px_rgba(0,0,0,0.65)] backdrop-blur-xl sm:p-7">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-5">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0f766e]">Your grievance journey</p>
@@ -195,9 +200,45 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <a aria-label="Scroll to citizen services" className="mx-auto mb-6 hidden w-fit items-center gap-2 text-xs font-medium text-slate-500 transition hover:text-[#0f766e] md:flex" href="#services">
+          <a aria-label="Scroll to citizen services" className="absolute bottom-5 left-1/2 z-10 hidden w-fit -translate-x-1/2 items-center gap-2 text-xs font-medium text-white/80 transition hover:text-white md:flex" href="#services">
             Explore portal services <ArrowDown aria-hidden="true" size={14} />
           </a>
+        </section>
+
+        <section aria-labelledby="chief-minister-heading" className="overflow-hidden bg-[#f5f8f6] px-5 py-16 sm:px-8 sm:py-20">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="px-7 py-9 sm:px-10 sm:py-12 lg:px-14">
+              <p className="text-xs font-bold tracking-[0.16em] text-[#0f766e]">A MESSAGE OF PUBLIC SERVICE</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl" id="chief-minister-heading">
+                Hon&apos;ble Chief Minister
+              </h2>
+              <p className="mt-2 text-xl font-medium text-[#17665e]">Shri V. D. Satheesan</p>
+              <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+                The Chief Minister&apos;s Public Service Portal provides a channel for Citizens to bring public-service concerns forward and follow the review and action taken by the relevant authorities.
+              </p>
+              <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
+                Each grievance receives a reference number and is handled through a structured process involving CMO review, department investigation, and a response.
+              </p>
+              <Link
+                className="mt-7 inline-flex items-center gap-2 rounded-lg bg-[#0f766e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0b625c]"
+                href="/register"
+              >
+                Submit a grievance <ArrowRight aria-hidden="true" size={17} />
+              </Link>
+            </div>
+            <div className="relative flex min-h-[340px] items-end justify-center overflow-hidden bg-gradient-to-br from-[#dcefe7] via-[#f2f7f4] to-[#e8f0ed] px-5 pt-8 sm:min-h-[440px] lg:min-h-[520px]">
+              <div aria-hidden="true" className="absolute bottom-0 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-t-full bg-white/70" />
+              <Image
+                alt="Portrait of Shri V. D. Satheesan"
+                className="relative z-10 max-h-[440px] w-auto max-w-full object-contain object-bottom sm:max-h-[500px]"
+                height={1024}
+                priority={false}
+                sizes="(max-width: 1024px) 90vw, 42vw"
+                src="/images/cmvd.png"
+                width={433}
+              />
+            </div>
+          </div>
         </section>
 
         <section className="border-y border-slate-100 bg-white">
@@ -341,8 +382,8 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.7fr]">
             <div>
               <div className="flex items-center gap-3">
-                <span className="grid size-10 place-items-center rounded-lg bg-white/10 text-[#c2e9db]">
-                  <Landmark aria-hidden="true" size={21} />
+                <span className="grid h-12 w-[68px] place-items-center rounded-md bg-white p-1">
+                  <PortalLogo className="h-full w-full" />
                 </span>
                 <div>
                   <p className="text-xs font-bold tracking-[0.14em] text-[#c2e9db]">GOVERNMENT OF KERALA</p>

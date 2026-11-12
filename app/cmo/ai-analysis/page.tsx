@@ -3,6 +3,7 @@ import { connection } from "next/server";
 import { requireRole } from "@/lib/auth";
 import { getGrievancesForAiAnalysis } from "@/lib/grievance-queries";
 import { grievanceStatusLabel } from "@/lib/grievances";
+import { PortalLogo } from "@/components/portal-logo";
 
 export default async function AiAnalysisPage() {
   await connection();
@@ -14,8 +15,13 @@ export default async function AiAnalysisPage() {
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
           <div>
-            <p className="text-xs font-bold tracking-[0.16em] text-[#0f766e]">CM KERALA PORTAL</p>
-            <p className="mt-1 text-sm text-slate-500">CMO Admin · AI Analysis</p>
+            <div className="flex items-center gap-3">
+              <PortalLogo className="h-10 w-[62px]" />
+              <div>
+                <p className="text-xs font-bold tracking-[0.16em] text-[#0f766e]">GOVERNMENT OF KERALA</p>
+                <p className="mt-1 text-sm text-slate-500">CMO Admin · AI Analysis</p>
+              </div>
+            </div>
           </div>
           <Link className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50" href="/cmo/dashboard">
             Back to dashboard

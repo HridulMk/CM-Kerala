@@ -6,6 +6,7 @@ import {
   OfficerRegistrationForm,
 } from "@/components/auth/officer-registration-form";
 import { RouteLoading } from "@/components/auth/route-loading";
+import { PortalLogo } from "@/components/portal-logo";
 import { dashboardPath } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 
@@ -120,6 +121,7 @@ function RegistrationShell({
   return (
     <main className="grid min-h-screen place-items-center bg-[#f5f7f8] px-5 py-10">
       <section className="w-full max-w-lg rounded-3xl bg-white p-8 shadow-[0_24px_80px_-40px_rgba(15,55,67,0.35)] sm:p-10">
+        <PortalLogo className="mb-5 h-12 w-[76px]" />
         <p className="text-sm font-semibold text-[#0f766e]">{label}</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">
           {heading}

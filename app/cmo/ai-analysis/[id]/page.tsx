@@ -5,6 +5,7 @@ import { AiAnalysisForm } from "@/components/admin/ai-analysis-form";
 import { requireRole } from "@/lib/auth";
 import { getGrievanceForAiAnalysis } from "@/lib/grievance-queries";
 import { grievanceStatusLabel } from "@/lib/grievances";
+import { PortalLogo } from "@/components/portal-logo";
 
 export default async function AiAnalysisDetailPage({
   params,
@@ -26,8 +27,13 @@ export default async function AiAnalysisDetailPage({
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-5 sm:px-8">
           <div>
-            <p className="text-xs font-bold tracking-[0.16em] text-[#0f766e]">CM KERALA PORTAL</p>
-            <p className="mt-1 text-sm text-slate-500">Groq-assisted grievance review</p>
+            <div className="flex items-center gap-3">
+              <PortalLogo className="h-10 w-[62px]" />
+              <div>
+                <p className="text-xs font-bold tracking-[0.16em] text-[#0f766e]">GOVERNMENT OF KERALA</p>
+                <p className="mt-1 text-sm text-slate-500">Groq-assisted grievance review</p>
+              </div>
+            </div>
           </div>
           <Link className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50" href="/cmo/ai-analysis">
             All grievances

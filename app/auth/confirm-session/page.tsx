@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import { PortalLogo } from "@/components/portal-logo";
 
 export default function ConfirmSessionPage() {
   const router = useRouter();
@@ -66,6 +67,7 @@ export default function ConfirmSessionPage() {
   return (
     <main className="grid min-h-screen place-items-center bg-[#f5f7f8] px-5 py-10">
       <section className="w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-[0_24px_80px_-40px_rgba(15,55,67,0.35)] sm:p-10">
+        <PortalLogo className="mx-auto mb-5 h-12 w-[76px]" />
         <p className="text-sm font-semibold text-[#0f766e]">Account verification</p>
         <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">
           Verify your account

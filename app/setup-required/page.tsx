@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { PortalLogo } from "@/components/portal-logo";
 
 export default function SetupRequiredPage() {
   return (
     <main className="grid min-h-screen place-items-center bg-[#f5f7f8] px-5 py-10">
       <section className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-10">
+        <PortalLogo className="mb-5 h-12 w-[76px]" />
         <p className="text-sm font-semibold text-[#0f766e]">Supabase setup required</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">
           The portal database setup is incomplete

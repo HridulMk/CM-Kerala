@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { RegisterForm } from "@/components/auth/register-form";
+import { PortalLogo } from "@/components/portal-logo";
 
 export default function RegisterPage() {
   return (
     <main className="min-h-screen bg-[#f5f7f8] px-5 py-10 sm:px-8">
       <div className="mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-6xl flex-col justify-between">
         <header className="flex items-center gap-3">
-          <div className="grid size-11 place-items-center rounded-xl bg-[#0f766e] text-sm font-bold text-white">KL</div>
+          <PortalLogo className="h-11 w-[68px]" />
           <div>
             <p className="text-sm font-bold tracking-wide text-[#183b45]">GOVERNMENT OF KERALA</p>
             <p className="text-xs text-slate-500">Chief Minister&apos;s Public Service Portal</p>
